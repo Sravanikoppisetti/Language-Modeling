@@ -114,7 +114,7 @@ Returns: dict mapping strs to (dicts mapping strs to ints)
 def countBigrams(corpus):
     count_bigrams={}
     for i in range(len(corpus)):
-        corpus_list=(corpus[i]) 
+        corpus_list=(corpus[i])
         for j in range(len(corpus_list)-1):
             word=corpus_list[j]
             if word not in count_bigrams:
