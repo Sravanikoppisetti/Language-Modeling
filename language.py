@@ -165,7 +165,18 @@ Parameters: dict mapping strs to ints ; dict mapping strs to (dicts mapping strs
 Returns: dict mapping strs to (dicts mapping strs to (lists of values))
 '''
 def buildBigramProbs(unigramCounts, bigramCounts):
-    return
+    bigram_Probs={}
+    for prevWord in bigramCounts:
+        word=[]
+        prob=[]
+        for k,v in bigramCounts[prevWord].items():
+            word.append(k)
+            prob.append(v/unigramCounts[prevWord])
+        temporary_dict={}
+        temporary_dict["words"]=word
+        temporary_dict["probs"]=prob
+        bigram_Probs[prevWord]= temporary_dict
+    return bigram_Probs
 
 
 '''
@@ -175,7 +186,7 @@ Parameters: int ; list of strs ; list of floats ; list of strs
 Returns: dict mapping strs to floats
 '''
 def getTopWords(count, words, probs, ignoreList):
-    return
+    return 
 
 
 '''
@@ -185,8 +196,10 @@ Parameters: int ; list of strs ; list of floats
 Returns: str
 '''
 from random import choices
+import random
 def generateTextFromUnigrams(count, words, probs):
-    return
+   return 
+
 
 
 '''
@@ -196,8 +209,7 @@ Parameters: int ; list of strs ; list of floats ; dict mapping strs to (dicts ma
 Returns: str
 '''
 def generateTextFromBigrams(count, startWords, startWordProbs, bigramProbs):
-    return
-
+    return 
 
 ### WEEK 3 ###
 
@@ -213,6 +225,7 @@ Parameters: 2D list of strs
 Returns: None
 '''
 def graphTop50Words(corpus):
+
     return
 
 
@@ -346,8 +359,9 @@ if __name__ == "__main__":
     # print("\n" + "#"*15 + " WEEK 1 OUTPUT " + "#" * 15 + "\n")
     # test.runWeek1()
     #test.testCountBigrams()
-    #test.testBuildUniformProbs()
-    test.testBuildUnigramProbs()
+    test.testBuildUniformProbs()
+    #test.testBuildBigramProbs()
+    #test.testGenerateTextFromBigrams()
 
     ## Uncomment these for Week 2 ##
 """
