@@ -172,9 +172,9 @@ def buildBigramProbs(unigramCounts, bigramCounts):
         for k,v in bigramCounts[prevWord].items():
             word.append(k)
             prob.append(v/unigramCounts[prevWord])
-            temporary_dict={}
-            temporary_dict["words"]=word
-            temporary_dict["probs"]=prob
+        temporary_dict={}
+        temporary_dict["words"]=word
+        temporary_dict["probs"]=prob
         bigram_Probs[prevWord]= temporary_dict
     return bigram_Probs
 
@@ -240,6 +240,7 @@ Parameters: 2D list of strs
 Returns: None
 '''
 def graphTop50Words(corpus):
+
     return
 
 
