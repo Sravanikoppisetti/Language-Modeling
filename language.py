@@ -123,7 +123,7 @@ def countBigrams(corpus):
                 next_word= corpus_list[j+1]
                 if next_word not in count_bigrams[word]:
                     count_bigrams[word][next_word] = 0
-                count_bigrams[word][next_word] += 1
+                count_bigrams[word][next_word] += 1  
     return(count_bigrams)
 
 ### WEEK 2 ###
@@ -445,7 +445,7 @@ if __name__ == "__main__":
     # test.week1Tests()
     # print("\n" + "#"*15 + " WEEK 1 OUTPUT " + "#" * 15 + "\n")
     # test.runWeek1()
-    #test.testCountBigrams()
+    # test.testCountBigrams()
     #test.testBuildUniformProbs()
     #test.testBuildBigramProbs()
     #test.testGenerateTextFromBigrams()
@@ -462,4 +462,4 @@ if __name__ == "__main__":
 
     print("\n" + "#"*15 + " WEEK 3 OUTPUT " + "#" * 15 + "\n")
     test.runWeek3()
-    #test.testSetupChartData()
+    test.testSetupChartData()
