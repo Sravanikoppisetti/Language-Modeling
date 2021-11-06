@@ -254,7 +254,16 @@ Parameters: 2D list of strs
 Returns: None
 '''
 def graphTop50Words(corpus):
-
+    import matplotlib.pyplot as plt
+    unigrams=buildVocabulary(corpus)
+    unigramCounts=countUnigrams(corpus)
+    totalCount=getCorpusLength(corpus)
+    probs=buildUnigramProbs(unigrams, unigramCounts, totalCount)
+    top_50_words=getTopWords(50, unigrams, probs, ignore)
+    plot = barPlot(top_50_words, "Top 50 Words")
+    # plt.xlabel("words")
+    # plt.ylabel("probabilities")
+    # plt.show()
     return
 
 
@@ -390,18 +399,17 @@ if __name__ == "__main__":
     #test.testCountBigrams()
     #test.testBuildUniformProbs()
     #test.testBuildBigramProbs()
-    test.testGenerateTextFromBigrams()
+    #test.testGenerateTextFromBigrams()
 
     ## Uncomment these for Week 2 ##
-"""
-    print("\n" + "#"*15 + " WEEK 2 TESTS " +  "#" * 16 + "\n")
-    test.week2Tests()
-    print("\n" + "#"*15 + " WEEK 2 OUTPUT " + "#" * 15 + "\n")
-    test.runWeek2()
-"""
+# """
+#     print("\n" + "#"*15 + " WEEK 2 TESTS " +  "#" * 16 + "\n")
+#     test.week2Tests()
+#     print("\n" + "#"*15 + " WEEK 2 OUTPUT " + "#" * 15 + "\n")
+#     test.runWeek2()
+# """
 
     ## Uncomment these for Week 3 ##
-"""
+
     print("\n" + "#"*15 + " WEEK 3 OUTPUT " + "#" * 15 + "\n")
     test.runWeek3()
-"""
